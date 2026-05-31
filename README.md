@@ -236,5 +236,5 @@ For questions, issues, or contributions:
 
 ---
 
-**Last Updated**: 24/05/2026  
-**Website Version**: 2.0.0
+**Last Updated**: 31/05/2026  
+**Website Version**: 1.0.0
