@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Multi-Voltage Crypto Core: RTL to GDSII - 32nm Multi-Voltage ASIC Design Reference">
+    <meta name="author" content="Ajay Mallesh">
+    <title>Crypto_Top Website | Multi-Voltage ASIC Design Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- ===================================================================
+         NAVIGATION BAR
+         =================================================================== -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#home" data-page="home" class="logo">Crypto_Top</a>
+            <button class="menu-toggle">☰</button>
+            <ul>
+                <!-- Home -->
+                <li>
+                    <a href="#home" data-page="home">Home</a>
+                </li>
+
+                <!-- Input Files Dropdown -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Input Files ▼</a>
+                    <ul class="submenu">
+                        <li><a href="#rtl" data-page="rtl">RTL</a></li>
+                        <li><a href="#upf" data-page="upf">UPF</a></li>
+                        <li><a href="#sdc" data-page="sdc">SDC</a></li>
+                    </ul>
+                </li>
+
+                <!-- Scripts Dropdown -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Scripts ▼</a>
+                    <ul class="submenu">
+                        <li><a href="#synthesis" data-page="synthesis">Synthesis</a></li>
+                        <li><a href="#floorplan" data-page="floorplan">Floorplan-to-Powerplan</a></li>
+                        <li><a href="#placement" data-page="placement">Placement</a></li>
+                        <li><a href="#cts" data-page="cts">CTS</a></li>
+                        <li><a href="#routing" data-page="routing">Routing</a></li>
+                        <li><a href="#signoff" data-page="signoff">Signoff</a></li>
+                        <li><a href="#drv-fixes" data-page="drv-fixes">DRV Fixes</a></li>
+                        <li><a href="#setup-fixes" data-page="setup-fixes">Setup Fixes</a></li>
+                    </ul>
+                </li>
+
+                <!-- Shapes Dropdown -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Shapes ▼</a>
+                    <ul class="submenu">
+                        <li><a href="#shape-a" data-page="shape-a">A Shape</a></li>
+                        <li><a href="#shape-y" data-page="shape-y">Y Shape</a></li>
+                    </ul>
+                </li>
+
+                <!-- Manual -->
+                <li>
+                    <a href="#manual" data-page="manual">Manual</a>
+                </li>
+
+                <!-- Extra Files -->
+                <li>
+                    <a href="#xtra-files" data-page="xtra-files">Xtra Files</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===================================================================
+         MAIN CONTENT AREA
+         =================================================================== -->
+    <main>
+        <!-- HOME PAGE -->
+        <div id="home" class="page active">
+            <div class="hero">
+                <h1>Multi-Voltage Crypto Core</h1>
+                <p class="subtitle">RTL to GDSII (Vol. 1)</p>
+                <p class="subtitle">32nm Multi-Voltage ASIC Design Reference</p>
+                <p class="subtitle">(0.95V / 0.75V Dual Supply Physical Design Methodology)</p>
+                <p class="description" style="margin-top: 1.5rem;">
+                    The Complete Implementation Handbook
+                </p>
+            </div>
+
+            <section class="section">
+                <h2>Project Overview</h2>
+                <p>
+                    Welcome to the <strong>Multi-Voltage Crypto Core project</strong> — a comprehensive RTL-to-GDSII design flow 
+                    reference for a <strong>high-performance cryptographic accelerator</strong> implemented in <strong>32nm CMOS technology</strong>. 
+                    This project demonstrates industry-standard ASIC design methodologies for multi-voltage systems with ~600K instances pre-synthesis.
+                </p>
+
+                <div class="meta-info">
+                    <div class="meta-card">
+                        <h3>Project Creator</h3>
+                        <p><strong>Author:</strong> Ajay Mallesh</p>
+                        <p><strong>Reviewer:</strong> Gemini Pro 3.1 & Ajay Mallesh</p>
+                    </div>
+                    <div class="meta-card">
+                        <h3>Version Info</h3>
+                        <p><strong>Version:</strong> 2.0 (2026)</p>
+                        <p><strong>Date:</strong> 23/05/2026</p>
+                    </div>
+                    <div class="meta-card">
+                        <h3>GitHub Repository</h3>
+                        <p><a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files" class="links-list" target="_blank" style="color: var(--highlight-color);">
+                            Complete Project Files
+                        </a></p>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem; font-style: italic; color: var(--text-secondary);">
+                    "This project is generated with Gemini Pro 3.1 and crafted by Ajay Mallesh with ❤️"
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Technology Specifications</h2>
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Specification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Technology Node</td>
+                            <td>32nm CMOS</td>
+                        </tr>
+                        <tr>
+                            <td>Design Type</td>
+                            <td>Multi-Voltage ASIC</td>
+                        </tr>
+                        <tr>
+                            <td>Core Type</td>
+                            <td>Crypto Accelerator</td>
+                        </tr>
+                        <tr>
+                            <td>Instance Count</td>
+                            <td>~600K Instances (Pre-Synthesis)</td>
+                        </tr>
+                        <tr>
+                            <td>Voltage Domains</td>
+                            <td>0.95V / 0.75V</td>
+                        </tr>
+                        <tr>
+                            <td>Flow Style</td>
+                            <td>RTL → GDSII</td>
+                        </tr>
+                        <tr>
+                            <td>Primary Tools</td>
+                            <td>Synopsys / Cadence</td>
+                        </tr>
+                        <tr>
+                            <td>Timing Methodology</td>
+                            <td>MCMM</td>
+                        </tr>
+                        <tr>
+                            <td>Signoff Style</td>
+                            <td>PrimeTime / StarRC</td>
+                        </tr>
+                        <tr>
+                            <td>Power Strategy</td>
+                            <td>Multi-Domain Mesh PDN</td>
+                        </tr>
+                        <tr>
+                            <td>Clocking</td>
+                            <td>CTS + NDR</td>
+                        </tr>
+                        <tr>
+                            <td>Target Audience</td>
+                            <td>Physical Design Engineers / ASIC Architects</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="section">
+                <h2>Project Introduction</h2>
+                <h3>Multi-Voltage Crypto Core Architecture</h3>
+                <p>
+                    The <strong>crypto_top</strong> project is a high-performance ASIC cryptographic accelerator designed using 32nm CMOS technology. 
+                    It contains around <strong>30K standard cells</strong> and implements cryptographic operations such as <strong>AES-256 and SHA-3</strong>.
+                </p>
+                <p>
+                    Cryptographic operations require high-speed computation, while control logic and peripheral interfaces operate at lower speeds. 
+                    To reduce power consumption and meet SoC thermal constraints, the design uses a <strong>dual-voltage architecture</strong> based on voltage scaling.
+                </p>
+
+                <h3>Voltage Domains</h3>
+                <p>The design is divided into two voltage domains:</p>
+                <ul class="features-list">
+                    <li><strong>High-Performance Domain (0.95V / VDD):</strong> Contains the main datapath and computational engines. 
+                        Operates at 0.95V to achieve maximum performance and timing closure using saed32rvt_ss0p95v125c.db libraries.</li>
+                    <li><strong>Low-Power Domain (0.75V / VDDL):</strong> Includes control logic and low-speed peripherals. 
+                        Operating at 0.75V significantly reduces dynamic power consumption using saed32rvt_ss0p75v125c.db libraries.</li>
+                </ul>
+
+                <h3>Physical Design Challenges</h3>
+                <p>The multi-voltage architecture introduces several backend design complexities:</p>
+                <ul class="features-list">
+                    <li>UPF-based power intent integration</li>
+                    <li>Level shifters for signals crossing voltage domains</li>
+                    <li>Dedicated voltage areas and power planning</li>
+                    <li>MCMM timing analysis across multiple operating conditions</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Design Tools</h2>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>Synopsys Design Compiler</h4>
+                        <p>RTL synthesis, logic optimization, and DFT insertion for gate-level netlist generation.</p>
+                    </div>
+                    <div class="content-card">
+                        <h4>Synopsys ICC2</h4>
+                        <p>Physical design implementation including floorplanning, placement, CTS, and routing.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Copyright & Legal Information</h2>
+                <p>
+                    <strong>© 2026 Ajay Mallesh.</strong> This project is open-source and released for educational and non-commercial community use. 
+                    You are free to use, modify and distribute this project in accordance with the project license.
+                </p>
+                <p>
+                    <strong>Author:</strong> Ajay Mallesh | 
+                    <strong>Email:</strong> <a href="mailto:ajaymalavalli912@gmail.com" style="color: var(--highlight-color);">ajaymalavalli912@gmail.com</a> | 
+                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ajaymallesh" target="_blank" style="color: var(--highlight-color);">www.linkedin.com/in/ajaymallesh</a>
+                </p>
+
+                <h3 style="margin-top: 2rem;">Legal Disclaimer</h3>
+                <p>
+                    The methodologies, TCL examples, UPF constructs, synthesis flows, timing constraints and physical implementation strategies 
+                    described in this documentation are intended exclusively for educational and research purposes.
+                </p>
+                <p>
+                    <strong>Tool commands and flows may vary depending on:</strong>
+                </p>
+                <ul class="features-list">
+                    <li>Tool version</li>
+                    <li>Process node</li>
+                    <li>Foundry NDA constraints</li>
+                    <li>Technology LEF/DEF structure</li>
+                    <li>Extraction deck version</li>
+                    <li>Signoff correlation methodology</li>
+                    <li>EDA vendor implementation changes</li>
+                </ul>
+                <p style="margin-top: 1.5rem;">
+                    <strong>The author assumes no responsibility for:</strong> silicon failure, timing closure loss, LVS/DRC violations, 
+                    power collapse, EM degradation, tape-out delay, or fabrication loss arising from improper application of the concepts described herein.
+                </p>
+            </section>
+        </div>
+
+        <!-- INPUT FILES PAGES -->
+        <!-- RTL Page -->
+        <div id="rtl" class="page">
+            <section class="section">
+                <h2>RTL - Multi-Voltage Crypto Core</h2>
+                <p>
+                    Designed a <strong>128-bit cryptographic accelerator</strong> using a <strong>multi-voltage architecture</strong> 
+                    to optimize both power consumption and performance in ASIC-based systems. The design separates functionality into a 
+                    <strong>0.75V low-power domain</strong> for key generation and a <strong>0.95V high-performance domain</strong> 
+                    for encryption processing, demonstrating practical power-aware digital design techniques.
+                </p>
+
+                <h3>Architecture Overview</h3>
+                <p>
+                    The low-power block generates a pseudo-random keystream using a <strong>128-bit LFSR-based key scheduler</strong>, 
+                    while the high-performance encryption engine implements a <strong>64-round Substitution-Permutation Network (SPN)</strong> architecture. 
+                    A dedicated voltage-domain interface safely transfers key data between domains, reflecting real-world ASIC design practices 
+                    for power-domain integration.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                    <li>128-bit encryption datapath with configurable architecture</li>
+                    <li>Low-power key generation operating at 0.75V</li>
+                    <li>High-performance cipher core operating at 0.95V</li>
+                    <li>Safe voltage-domain crossing through interface registers</li>
+                    <li>64-round SPN-based encryption engine</li>
+                    <li>Parallel 4-bit S-Box implementation for non-linear transformations</li>
+                    <li>Deep pipelining for improved throughput and timing performance</li>
+                    <li>Fully synthesizable and modular Verilog RTL</li>
+                </ul>
+
+                <h3>Applications</h3>
+                <p>
+                    Secure SoCs, IoT security accelerators, embedded cryptographic engines, hardware security modules (HSMs), 
+                    and power-constrained ASIC designs.
+                </p>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Verilog RTL Design</li>
+                    <li>Multi-Voltage Design</li>
+                    <li>Cryptographic Hardware Architecture</li>
+                    <li>ASIC Design Methodology</li>
+                    <li>Power-Aware Digital Design</li>
+                    <li>Pipelined Datapath Design</li>
+                    <li>Parameterized Hardware Development</li>
+                </ul>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/RTL/crypto_top.v" target="_blank" class="btn">
+                    View RTL Source on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- UPF Page -->
+        <div id="upf" class="page">
+            <section class="section">
+                <h2>UPF - Multi-Voltage Power Intent Design</h2>
+                <p>
+                    Developed a <strong>silicon-ready Unified Power Format (UPF)</strong> specification for a multi-voltage cryptographic accelerator, 
+                    enabling power-aware implementation and verification across multiple voltage domains. The power architecture partitions the design 
+                    into a <strong>0.95V high-performance domain</strong> and a <strong>0.75V low-power domain</strong>, optimizing overall power 
+                    consumption while maintaining system functionality and reliability.
+                </p>
+
+                <h3>Power Intent Architecture</h3>
+                <p>
+                    The UPF defines dedicated power domains, supply ports, supply nets, and domain-specific power connections to accurately capture 
+                    the design's power intent. Voltage states and a <strong>Power State Table (PST)</strong> were created to model valid operating modes, 
+                    ensuring correct behavior during power-aware simulation and implementation. Level shifter strategies were also specified to safely 
+                    manage signal transfers between voltage domains, addressing voltage compatibility requirements during physical design.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                    <li>Defined separate power domains for high-performance and low-power functional blocks</li>
+                    <li>Created supply ports, supply nets, and primary power/ground connections</li>
+                    <li>Configured voltage operating states for 0.95V and 0.75V domains</li>
+                    <li>Developed Power State Tables (PST) to represent valid system power modes</li>
+                    <li>Specified low-to-high and high-to-low level shifter insertion strategies</li>
+                    <li>Enabled power-aware simulation, synthesis, place-and-route, and signoff flows</li>
+                    <li>Designed according to industry-standard low-power ASIC methodologies</li>
+                    <li>Supported seamless integration between RTL, UPF, and physical design implementation</li>
+                </ul>
+
+                <h3>Applications</h3>
+                <p>
+                    Low-power ASICs, secure cryptographic accelerators, IoT SoCs, edge computing devices, battery-powered systems, 
+                    and advanced multi-voltage semiconductor designs.
+                </p>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>UPF (Unified Power Format)</li>
+                    <li>Low-Power Design Techniques</li>
+                    <li>Multi-Voltage Architecture</li>
+                    <li>Power Domain Management</li>
+                    <li>Level Shifter Implementation</li>
+                    <li>Power State Table (PST) Development</li>
+                    <li>Power-Aware Verification</li>
+                    <li>ASIC Physical Design Methodology</li>
+                    <li>SoC Power Intent Specification</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Successfully defined and implemented a complete UPF-based power intent for a multi-voltage cryptographic accelerator, 
+                    enabling safe cross-domain communication, power-aware verification, and silicon-ready low-power ASIC implementation.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/upf/crypto_power.upf" target="_blank" class="btn">
+                    View UPF File on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- SDC Page -->
+        <div id="sdc" class="page">
+            <section class="section">
+                <h2>SDC - Synthesis Timing Constraints</h2>
+                
+                <h3>SDC for Synthesis (Only)</h3>
+                <p>
+                    Developed a synthesis-focused Synopsys Design Constraints (SDC) file for a multi-voltage cryptographic accelerator, 
+                    defining the timing and design-rule requirements required for logic synthesis and optimization. The constraint set establishes 
+                    clock definitions, I/O timing budgets, transition limits, fanout restrictions, and load assumptions to guide synthesis tools 
+                    toward achieving timing closure and producing an optimized gate-level netlist.
+                </p>
+
+                <h3>Synthesis Constraint Features</h3>
+                <ul class="features-list">
+                    <li>Defined primary clock and virtual clock constraints</li>
+                    <li>Applied input and output delay budgets for timing-driven synthesis</li>
+                    <li>Configured maximum fanout and transition limits for signal integrity</li>
+                    <li>Specified output load and input transition characteristics</li>
+                    <li>Enabled timing optimization and synthesis-driven design rule checking</li>
+                    <li>Generated synthesis-ready constraints for gate-level netlist creation</li>
+                    <li>Separated synthesis constraints from physical design timing signoff requirements</li>
+                </ul>
+
+                <h3>Synthesis Constraints Details</h3>
+                <p>
+                    The SDC includes a <strong>500 MHz system clock (2 ns period)</strong>, input/output delay constraints, maximum fanout limits, 
+                    transition constraints, and load modeling to accurately represent the intended operating environment during synthesis. 
+                    These constraints enable efficient logic optimization, buffer insertion, gate sizing, and timing-driven synthesis while 
+                    maintaining design quality and performance targets.
+                </p>
+
+                <h3>Applications</h3>
+                <p>
+                    ASIC synthesis flows, timing-driven logic optimization, cryptographic accelerators, high-performance digital systems, 
+                    and multi-voltage SoC development.
+                </p>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>SDC Development</li>
+                    <li>Timing Constraint Creation</li>
+                    <li>Logic Synthesis</li>
+                    <li>Static Timing Analysis Fundamentals</li>
+                    <li>Clock Definition</li>
+                    <li>I/O Timing Budgeting</li>
+                    <li>Design Rule Constraints</li>
+                    <li>Timing Closure Methodology</li>
+                    <li>ASIC Front-End Design Flow</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Created a comprehensive synthesis constraint environment that enables timing-driven optimization and supports successful 
+                    gate-level implementation of a high-performance multi-voltage cryptographic accelerator.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/Constraints/synthesis_only/constraints_mv.sdc" target="_blank" class="btn">
+                    View Synthesis SDC on GitHub
+                </a>
+            </section>
+
+            <section class="section">
+                <h2>MCMM - Physical Design Timing Constraints</h2>
+                
+                <h3>Multi-Corner Multi-Mode Timing Setup</h3>
+                <p>
+                    Developed a complete <strong>Multi-Corner Multi-Mode (MCMM)</strong> timing constraint environment for the physical design 
+                    implementation of a multi-voltage cryptographic accelerator. Created corner-specific, mode-specific, and scenario-specific 
+                    TCL constraint files to support timing analysis, optimization, and signoff across multiple operating conditions.
+                </p>
+
+                <h3>MCMM Configuration</h3>
+                <p>
+                    The MCMM setup includes <strong>Fast-Fast (-40°C)</strong> and <strong>Slow-Slow (125°C)</strong> process corners, 
+                    covering both <strong>Functional</strong> and <strong>Scan/Test</strong> operating modes. A centralized MCMM setup script 
+                    was used to define analysis views and manage scenario configurations for place-and-route and timing closure.
+                </p>
+
+                <h3>MCMM Key Features</h3>
+                <ul class="features-list">
+                    <li>Created corner-specific timing constraints for FF (-40°C) and SS (125°C) conditions</li>
+                    <li>Developed separate Functional and Scan mode constraint files</li>
+                    <li>Defined setup analysis scenarios across multiple PVT conditions</li>
+                    <li>Configured MCMM views for timing optimization and signoff</li>
+                    <li>Enabled robust setup timing analysis across worst-case and best-case conditions</li>
+                    <li>Supported physical design stages including placement, CTS, routing, and STA</li>
+                    <li>Improved timing closure coverage by validating design across multiple operating scenarios</li>
+                </ul>
+
+                <h3>MCMM Files Developed</h3>
+                <p><strong>Corner Constraints:</strong></p>
+                <ul class="features-list">
+                    <li>crypto_c_ff_m40c.tcl</li>
+                    <li>crypto_c_ss_125c.tcl</li>
+                </ul>
+
+                <p><strong>Mode Constraints:</strong></p>
+                <ul class="features-list">
+                    <li>crypto_m_func.tcl</li>
+                    <li>crypto_m_scan.tcl</li>
+                </ul>
+
+                <p><strong>Scenario Constraints:</strong></p>
+                <ul class="features-list">
+                    <li>crypto_s_func_ff_m40c.tcl</li>
+                    <li>crypto_s_func_ss_125c.tcl</li>
+                    <li>crypto_s_scan_ff_m40c.tcl</li>
+                    <li>crypto_s_scan_ss_125c.tcl</li>
+                </ul>
+
+                <p><strong>MCMM Setup:</strong></p>
+                <ul class="features-list">
+                    <li>mcmm_crypto_setup.tcl</li>
+                </ul>
+
+                <h3>MCMM Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>MCMM Setup</li>
+                    <li>Physical Design Constraints</li>
+                    <li>Static Timing Analysis (STA)</li>
+                    <li>Timing Closure</li>
+                    <li>PVT Corner Analysis</li>
+                    <li>Functional & Scan Timing</li>
+                    <li>Innovus/ICC2 Constraint Management</li>
+                    <li>Signoff Methodology</li>
+                    <li>ASIC Physical Design Flow</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Built a complete MCMM timing environment enabling accurate timing analysis and optimization across multiple process, 
+                    voltage, temperature, and operating-mode scenarios, supporting successful physical design implementation and signoff readiness.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/tree/main/Cryto_top_Project/Constraints/MCMM_PD_violations" target="_blank" class="btn">
+                    View MCMM Constraints on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- SCRIPTS PAGES -->
+        <!-- Synthesis Page -->
+        <div id="synthesis" class="page">
+            <section class="section">
+                <h2>Synthesis Script - Multi-Voltage Design</h2>
+                <p>
+                    Developed a <strong>complete Synopsys Design Compiler (dc_shell) synthesis flow</strong> for a 
+                    <strong>2-domain multi-voltage cryptographic accelerator (0.95V / 0.75V)</strong>. The script integrates RTL compilation, 
+                    UPF-based power intent, multi-voltage handling, DFT insertion, and final netlist export in a single automated flow.
+                </p>
+
+                <h3>Flow Architecture</h3>
+                <p>
+                    The flow is structured to ensure correct execution order for 
+                    <strong>multi-voltage synthesis → level-shifter insertion → scan insertion → final signoff data generation</strong>, 
+                    making it suitable for silicon-ready ASIC implementation.
+                </p>
+
+                <h3>Key Flow Features</h3>
+                <ul class="features-list">
+                    <li>Configured multi-voltage libraries including core, ultra-low-voltage, and level-shifter cells</li>
+                    <li>Integrated UPF power intent to define 0.95V and 0.75V domains</li>
+                    <li>Applied synthesis constraints (SDC) for timing-driven optimization</li>
+                    <li>Enabled multi-voltage checks and fixes (MV DRC, level shifters, tie cells)</li>
+                    <li>Automated compile → MV fix → incremental optimization flow</li>
+                    <li>Inserted DFT scan chains with scan enable, scan-in, scan-out, scan clock/reset handling</li>
+                    <li>Controlled scan architecture (single-chain configuration for simplicity)</li>
+                    <li>Ensured proper naming, consistency, and synchronization across outputs</li>
+                </ul>
+
+                <h3>Flow Stages</h3>
+                <h4>1. Setup & Library Configuration</h4>
+                <p>Defines technology libraries including standard cell libraries (0.95V / 125°C), low-voltage libraries (0.75V), 
+                and level shifter libraries for voltage crossing.</p>
+
+                <h4>2. RTL & Power Intent Integration</h4>
+                <ul class="features-list">
+                    <li>RTL elaboration of crypto_top</li>
+                    <li>UPF loaded for multi-voltage domain definition</li>
+                    <li>Voltage assignments applied to power nets (0.95V / 0.75V / GND)</li>
+                </ul>
+
+                <h4>3. Timing Constraints</h4>
+                <ul class="features-list">
+                    <li>SDC file read for synthesis timing requirements</li>
+                    <li>Operating conditions set for worst-case analysis</li>
+                    <li>Multi-voltage design check enabled</li>
+                </ul>
+
+                <h4>4. Multi-Voltage Optimization</h4>
+                <ul class="features-list">
+                    <li>Fixes for tie cells and ideal net handling</li>
+                    <li>Automatic level-shifter insertion enabled</li>
+                    <li>Multi-voltage design rule fixes applied before compilation</li>
+                </ul>
+
+                <h4>5. Logic Synthesis</h4>
+                <ul class="features-list">
+                    <li>compile_ultra -scan for optimized and scan-ready netlist</li>
+                    <li>Retiming and clock gating enabled</li>
+                    <li>Incremental compile after MV cell insertion</li>
+                </ul>
+
+                <h4>6. DFT Insertion</h4>
+                <ul class="features-list">
+                    <li>Scan ports created (scan enable, scan-in, scan-out)</li>
+                    <li>Scan architecture defined and validated</li>
+                    <li>DFT protocol generated and inserted into netlist</li>
+                    <li>Single scan chain configured for simplicity</li>
+                </ul>
+
+                <h4>7. Output Generation</h4>
+                <p>Exports silicon-ready deliverables:</p>
+                <ul class="features-list">
+                    <li>Gate-level Verilog netlist</li>
+                    <li>Synthesized SDC</li>
+                    <li>UPF (updated with naming consistency fixes)</li>
+                    <li>ScanDEF for backend physical design tools</li>
+                </ul>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Synopsys Design Compiler</li>
+                    <li>Multi-Voltage Synthesis</li>
+                    <li>UPF Integration</li>
+                    <li>DFT Insertion</li>
+                    <li>Scan Chain Design</li>
+                    <li>Level Shifter Handling</li>
+                    <li>Timing-Driven Synthesis</li>
+                    <li>ASIC Flow Automation</li>
+                    <li>Physical Design Readiness</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Built a <strong>fully automated multi-voltage synthesis and DFT flow</strong> that integrates power intent, 
+                    timing constraints, and scan insertion, producing a <strong>silicon-ready netlist for a 2-domain cryptographic accelerator</strong> 
+                    with correct voltage handling and testability support.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/scripts/working_scripts/synthesis/dc_compile.tcl" target="_blank" class="btn">
+                    View Synthesis Script on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- Floorplan Page -->
+        <div id="floorplan" class="page">
+            <section class="section">
+                <h2>Floorplan-to-Powerplan Flow</h2>
+                <p>
+                    Developed a <strong>full physical design initialization flow</strong> for a multi-voltage cryptographic SoC, 
+                    covering library setup, floorplanning, pin placement, power intent integration, and early physical readiness for placement and routing.
+                </p>
+
+                <h3>Design Methodology</h3>
+                <p>
+                    The flow is built using <strong>Synopsys ICC2-style block implementation methodology</strong>, 
+                    ensuring proper coordination between RTL netlist, UPF power intent, and physical constraints.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                    <li>Created a design library environment (NDM) using multiple technology variants (HVT/LVT/RVT/SRAM/tech files)</li>
+                    <li>Imported and linked synthesized gate-level netlist</li>
+                    <li>Initialized core-aware floorplan with 70% utilization for routing flexibility</li>
+                    <li>Performed structured I/O pin placement with layer and spacing constraints</li>
+                    <li>Integrated multi-voltage UPF into physical design and committed power intent</li>
+                    <li>Defined voltage-aware design regions (voltage areas) for domain separation</li>
+                    <li>Enabled multi-voltage design rule checking (MV DRC)</li>
+                    <li>Prepared design for macro integration, power planning, and routing closure</li>
+                </ul>
+
+                <h3>Flow Breakdown</h3>
+                <h4>1. Design Setup & Library Initialization</h4>
+                <ul class="features-list">
+                    <li>Created design library (CRYPTO_TOP_SCANCHAIN.nlib)</li>
+                    <li>Loaded technology and standard cell libraries (HVT/LVT/RVT/SRAM)</li>
+                    <li>Read and linked synthesized gate-level netlist</li>
+                </ul>
+
+                <h4>2. Floorplan Generation</h4>
+                <ul class="features-list">
+                    <li>Core utilization set to 70% for congestion-safe routing</li>
+                    <li>Aspect ratio fixed for balanced placement</li>
+                    <li>Defined site rows and core offsets for structured placement</li>
+                    <li>Saved initial floorplan checkpoint</li>
+                </ul>
+
+                <h4>3. Pin Placement Strategy</h4>
+                <ul class="features-list">
+                    <li>Input/output pins placed on Metal Layer M5</li>
+                    <li>Clock pins with higher spacing and protection</li>
+                    <li>Data inputs with standard spacing</li>
+                    <li>Outputs with isolated placement rules</li>
+                </ul>
+
+                <h4>4. Multi-Voltage Integration</h4>
+                <ul class="features-list">
+                    <li>Loaded and committed UPF power intent</li>
+                    <li>Created voltage-aware physical regions</li>
+                    <li>Verified multi-voltage correctness using check_mv_design</li>
+                    <li>Ensured correct separation of 0.75V and 0.95V domains at layout level</li>
+                </ul>
+
+                <h4>5. Power Grid Preparation</h4>
+                <ul class="features-list">
+                    <li>Executed power planning script (powerplan.tcl)</li>
+                    <li>Established robust power delivery network (PDN) for multi-voltage domains</li>
+                </ul>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Physical Design (ICC2)</li>
+                    <li>Floorplanning</li>
+                    <li>Pin Planning</li>
+                    <li>Multi-Voltage Integration</li>
+                    <li>UPF Commit Flow</li>
+                    <li>Power Grid Design</li>
+                    <li>Library Management (NDM)</li>
+                    <li>ASIC Backend Flow</li>
+                    <li>Early Stage Design Closure</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Built a <strong>complete physical design initialization flow</strong> that integrates <strong>multi-voltage power intent, 
+                    structured floorplanning, pin strategy, and DFT readiness</strong>, forming a solid foundation for placement, routing, 
+                    and timing closure of a silicon-ready cryptographic SoC.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/scripts/working_scripts/Floorplan_to_powerplan/pd_flow.tcl" target="_blank" class="btn">
+                    View Floorplan Script on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- Placement Page -->
+        <div id="placement" class="page">
+            <section class="section">
+                <h2>Placement Preparation & Optimization</h2>
+                <p>
+                    Developed a <strong>pre-placement and placement-optimization setup script</strong> for a multi-voltage cryptographic SoC 
+                    using an ICC2-style physical design flow. This stage prepares the design for legalization, congestion control, and 
+                    timing-aware placement while ensuring proper handling of macros, scan chains, and MCMM constraints.
+                </p>
+
+                <h3>Design Focus</h3>
+                <p>
+                    The flow focuses on <strong>clean design state restoration, placement rule configuration, congestion control, 
+                    and routing layer control</strong> before running full placement optimization.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                    <li>Restores and initializes clean placement stage from verified design snapshot</li>
+                    <li>Applies MCMM timing constraints setup for multi-corner, multi-mode analysis</li>
+                    <li>Handles macro and fixed cell placement constraints</li>
+                    <li>Enables advanced legalization and placement repair algorithms</li>
+                    <li>Controls cell density and fanout limits for congestion prevention</li>
+                    <li>Configures routing layer restrictions for early design stability</li>
+                    <li>Prepares scan chain and DEF-based physical integration</li>
+                    <li>Ensures placement-ready environment for optimization flow</li>
+                </ul>
+
+                <h3>Flow Breakdown</h3>
+                <h4>1. Design Restoration & Initialization</h4>
+                <ul class="features-list">
+                    <li>Restores design state from initial_placement</li>
+                    <li>Opens clean block for placement stage processing</li>
+                    <li>Runs pre-placement design checks</li>
+                </ul>
+
+                <h4>2. Placement Optimization Controls</h4>
+                <ul class="features-list">
+                    <li>Enables advanced legalization engine</li>
+                    <li>Activates search-and-repair placement optimization</li>
+                    <li>Limits placement density to 0.75 for congestion control</li>
+                    <li>Restricts maximum fanout to 25 for signal integrity</li>
+                </ul>
+
+                <h4>3. Routing & Layer Management</h4>
+                <ul class="features-list">
+                    <li>Defines ignored routing layers (M2–M6 restriction setup)</li>
+                    <li>Configures net routing rules</li>
+                    <li>Hard layer enforcement for critical nets</li>
+                    <li>Flexible pin connection handling for optimization</li>
+                </ul>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Physical Design (ICC2/Innovus)</li>
+                    <li>Placement Optimization</li>
+                    <li>MCMM Integration</li>
+                    <li>Congestion Management</li>
+                    <li>Macro Handling</li>
+                    <li>Scan Integration</li>
+                    <li>Design Rule Awareness</li>
+                    <li>Routing Constraint Setup</li>
+                    <li>ASIC Backend Flow Preparation</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Established a <strong>robust placement-ready environment for a multi-voltage SoC</strong>, integrating MCMM timing 
+                    constraints, scan chain structure, congestion control, and routing awareness to ensure smooth transition into full 
+                    placement and optimization stages.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/scripts/working_scripts/placement/placement_script.tcl" target="_blank" class="btn">
+                    View Placement Script on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- CTS Page -->
+        <div id="cts" class="page">
+            <section class="section">
+                <h2>Clock Tree Synthesis (CTS)</h2>
+                <p>
+                    Developed a <strong>complete Clock Tree Synthesis (CTS) execution script</strong> for a 
+                    <strong>standard-cell-only, multi-voltage cryptographic SoC</strong>, focusing on clock distribution, 
+                    skew control, and timing closure across multiple PVT corners. The flow integrates <strong>clock constraints, NDR rules, 
+                    clock uncertainty management, and multi-voltage level shifting</strong>, ensuring robust and low-skew clock propagation.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                    <li>Built a CTS flow excluding macros (standard-cell-only clock tree)</li>
+                    <li>Defined clock-specific routing rules (double width/spacing NDR)</li>
+                    <li>Applied multi-corner skew targets for SS/FF process conditions</li>
+                    <li>Configured clock uncertainty for setup and hold across all scenarios</li>
+                    <li>Enabled CRPR (Clock Reconvergence Pessimism Removal) for timing accuracy</li>
+                    <li>Inserted clock-domain level shifters for multi-voltage crossing</li>
+                    <li>Executed full clock build → route → optimization flow</li>
+                    <li>Performed final hold fixing and DFT-aware clock optimization</li>
+                </ul>
+
+                <h3>Flow Breakdown</h3>
+                <h4>1. Clock Routing Rules (NDR)</h4>
+                <ul class="features-list">
+                    <li>Removes default routing constraints</li>
+                    <li>Defines double-width & double-spacing rules for clock nets</li>
+                    <li>Restricts clock routing between M4–M5 layers for stability</li>
+                    <li>Improves signal integrity and reduces clock noise</li>
+                </ul>
+
+                <h4>2. Clock Constraint Definition</h4>
+                <ul class="features-list">
+                    <li>Sets max transition limits (0.15 ns)</li>
+                    <li>Defines target skew per corner:
+                        <ul style="margin-top: 0.5rem;">
+                            <li>SS corners → relaxed skew</li>
+                            <li>FF corners → tighter skew (0.02)</li>
+                        </ul>
+                    </li>
+                    <li>Enables corner-aware CTS optimization</li>
+                </ul>
+
+                <h4>3. CTS Execution Flow</h4>
+                <ul class="features-list">
+                    <li>Build Clock Tree (generates initial balanced clock structure)</li>
+                    <li>Clock Routing (physically routes clock network)</li>
+                    <li>Saves intermediate CTS states</li>
+                </ul>
+
+                <h4>4. Final Optimization Stage</h4>
+                <ul class="features-list">
+                    <li>Enables high-effort hold fixing</li>
+                    <li>DFT-aware scan clock optimization enabled</li>
+                    <li>Performs final timing and skew cleanup</li>
+                    <li>Produces signoff-ready clock network</li>
+                </ul>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Clock Tree Synthesis (CTS)</li>
+                    <li>Multi-Voltage Clock Design</li>
+                    <li>NDR Routing Strategy</li>
+                    <li>Skew Optimization</li>
+                    <li>Clock Uncertainty Modeling</li>
+                    <li>CRPR</li>
+                    <li>ASIC Physical Design (ICC2/Innovus)</li>
+                    <li>Timing Closure</li>
+                    <li>Clock Distribution Architecture</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Designed a <strong>robust multi-voltage CTS flow</strong> with <strong>corner-aware skew control, 
+                    clock-specific routing rules, and integrated level shifting</strong>, ensuring a <strong>low-skew, timing-clean 
+                    clock network ready for full-chip signoff</strong>.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/tree/main/Cryto_top_Project/scripts/working_scripts/cts" target="_blank" class="btn">
+                    View CTS Scripts on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- Routing Page -->
+        <div id="routing" class="page">
+            <section class="section">
+                <h2>Routing & Signoff Optimization</h2>
+                <p>
+                    Developed a <strong>full-chip production routing script</strong> for a <strong>multi-voltage cryptographic SoC</strong>, 
+                    focusing on timing closure, congestion-aware routing, and signal integrity optimization. The flow is designed for 
+                    <strong>signoff-quality routing</strong>, ensuring correct electrical behavior across all PVT corners and voltage domains.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                    <li>Enabled timing-driven routing across global, track, and detail stages</li>
+                    <li>Integrated crosstalk-aware routing for signal integrity (SI) reduction</li>
+                    <li>Applied statistical SI analysis for accurate noise modeling</li>
+                    <li>Ensured clock network protection during routing</li>
+                    <li>Included antenna rule integration for fabrication compliance</li>
+                    <li>Performed routability checks before routing execution</li>
+                    <li>Executed full route_auto → route_opt → signoff optimization flow</li>
+                    <li>Maintained consistent instance naming for debug and traceability</li>
+                </ul>
+
+                <h3>Flow Breakdown</h3>
+                <h4>1. Pre-Routing Verification</h4>
+                <ul class="features-list">
+                    <li>Runs pre-route design checks to ensure clean netlist state</li>
+                    <li>Generates routability report to detect congestion risks early</li>
+                </ul>
+
+                <h4>2. Timing-Driven Routing Strategy</h4>
+                <ul class="features-list">
+                    <li>Enables timing optimization at all routing stages (Global, Track, Detail)</li>
+                    <li>Ensures critical paths are prioritized during physical wire placement</li>
+                </ul>
+
+                <h4>3. Signal Integrity (SI) Optimization</h4>
+                <ul class="features-list">
+                    <li>Enables crosstalk-aware routing engine</li>
+                    <li>Uses statistical aggregation model for SI accuracy</li>
+                    <li>Improves noise robustness in high-speed nets</li>
+                </ul>
+
+                <h4>4. Routing Execution Flow</h4>
+                <ul class="features-list">
+                    <li>Global routing</li>
+                    <li>Track assignment</li>
+                    <li>Detailed routing</li>
+                    <li>Saves checkpoints at each stage for debug and recovery</li>
+                </ul>
+
+                <h4>5. Final Optimization</h4>
+                <ul class="features-list">
+                    <li>Runs post-route optimization (route_opt)</li>
+                    <li>Fixes timing violations and improves wire quality</li>
+                    <li>Produces signoff-ready routed design</li>
+                </ul>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Physical Design Routing</li>
+                    <li>Timing-Driven Routing</li>
+                    <li>Crosstalk Analysis (SI)</li>
+                    <li>Antenna Rule Compliance</li>
+                    <li>Congestion Management</li>
+                    <li>ICC2/Innovus Routing Flow</li>
+                    <li>Clock Network Protection</li>
+                    <li>ASIC Signoff Methodology</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Implemented a <strong>signoff-grade routing flow</strong> for a multi-voltage cryptographic SoC, integrating 
+                    <strong>timing, SI, and manufacturability constraints</strong> to achieve a <strong>robust, fabrication-ready 
+                    routed design with improved performance and reliability</strong>.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/scripts/working_scripts/routing/route.tcl" target="_blank" class="btn">
+                    View Routing Script on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- Signoff Page -->
+        <div id="signoff" class="page">
+            <section class="section">
+                <h2>Signoff Extraction & PrimeTime Handoff</h2>
+                <p>
+                    Developed a <strong>signoff-stage timing closure and extraction flow</strong> for a multi-voltage cryptographic SoC, 
+                    focusing on <strong>accurate parasitic extraction (StarRC) integration and PrimeTime STA handoff setup</strong>. 
+                    This stage ensures that post-route parasitics, power intent, and timing constraints are correctly prepared for final 
+                    timing signoff analysis.
+                </p>
+
+                <h3>Flow Purpose</h3>
+                <p>
+                    The flow bridges <strong>physical design signoff data → extraction (SPEF/NXTGRD) → static timing analysis (PrimeTime)</strong>, 
+                    enabling accurate silicon-level timing verification.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                    <li>Integrated signoff parasitic extraction flow using StarRC</li>
+                    <li>Managed corner-based parasitic models (Cbest / Cworst scenarios)</li>
+                    <li>Generated accurate SPEF for post-route timing analysis</li>
+                    <li>Prepared PrimeTime-ready netlist and constraint setup</li>
+                    <li>Configured multi-corner SDC generation (FF / SS scenarios)</li>
+                    <li>Handled UPF integration for multi-voltage consistency</li>
+                    <li>Enabled coupling-aware parasitic analysis for SI accuracy</li>
+                    <li>Established clean handoff from physical design to STA signoff tools</li>
+                </ul>
+
+                <h3>Flow Breakdown</h3>
+                <h4>1. Parasitic Extraction (StarRC Stage)</h4>
+                <p><strong>Inputs used:</strong></p>
+                <ul class="features-list">
+                    <li>Routed DEF</li>
+                    <li>NDM database</li>
+                    <li>Technology MAP files</li>
+                    <li>NXTGRD corner models</li>
+                </ul>
+
+                <p><strong>Generated parasitic outputs:</strong></p>
+                <ul class="features-list">
+                    <li>Cbest SPEF (fast corner)</li>
+                    <li>Cworst SPEF (slow corner)</li>
+                </ul>
+
+                <h4>2. SPEF Integration for STA</h4>
+                <ul class="features-list">
+                    <li>Extracted SPEF files copied into PrimeTime input environment</li>
+                    <li>Ensures consistency between physical and timing domains</li>
+                    <li>Enables multi-corner STA setup</li>
+                </ul>
+
+                <h4>3. Netlist & Constraint Preparation</h4>
+                <ul class="features-list">
+                    <li>Generated optimized post-route netlist (routed_netlist.v)</li>
+                    <li>Exported scenario-based SDCs (ff_125c.sdc, ss_125c.sdc)</li>
+                    <li>Ensures MCMM-aware timing analysis in PrimeTime</li>
+                </ul>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Static Timing Analysis (PrimeTime)</li>
+                    <li>Parasitic Extraction (StarRC)</li>
+                    <li>SPEF Generation</li>
+                    <li>MCMM Signoff Flow</li>
+                    <li>Multi-Voltage STA</li>
+                    <li>Power Intent Integration (UPF)</li>
+                    <li>Crosstalk-Aware Timing</li>
+                    <li>ASIC Signoff Methodology</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Built a <strong>complete signoff extraction-to-STA handoff flow</strong>, enabling <strong>accurate post-route 
+                    timing analysis using real parasitics (SPEF/NXTGRD) and multi-corner constraints</strong>, ensuring 
+                    <strong>silicon-accurate verification of a multi-voltage cryptographic SoC</strong>.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/scripts/working_scripts/signoff/signoff_script.tcl" target="_blank" class="btn">
+                    View Signoff Script on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- DRV Fixes Page -->
+        <div id="drv-fixes" class="page">
+            <section class="section">
+                <h2>DRV Fixes - Max Transition & Capacitance ECO</h2>
+                
+                <h3>1. Automated Cell Upsizing Script</h3>
+                <p>
+                    Developed an <strong>ECO (Engineering Change Order) automation script</strong> to fix <strong>max transition 
+                    and capacitance violations</strong> in a multi-voltage ASIC design. The script analyzes timing violation reports, 
+                    identifies critical nets, and automatically upsizes driving cells to improve signal strength and meet timing constraints.
+                </p>
+
+                <h3>Upsizing Features</h3>
+                <ul class="features-list">
+                    <li>Parses max transition violation reports automatically</li>
+                    <li>Extracts critical net names causing timing violations</li>
+                    <li>Identifies driver cells from output pins of affected nets</li>
+                    <li>Dynamically selects next higher drive strength from standard cell library</li>
+                    <li>Performs automatic cell resizing (upsizing)</li>
+                    <li>Applies incremental placement legalization after ECO changes</li>
+                    <li>Updates timing analysis after each modification</li>
+                    <li>Handles errors gracefully using TCL catch mechanism</li>
+                    <li>Tracks success/failure of each ECO operation</li>
+                </ul>
+
+                <h3>Upsizing Flow Breakdown</h3>
+                <h4>1. Violation-Driven Net Extraction</h4>
+                <ul class="features-list">
+                    <li>Reads timing report file (max_trans_vio.txt)</li>
+                    <li>Filters valid net entries from report</li>
+                    <li>Ignores headers and metadata lines</li>
+                </ul>
+
+                <h4>2. Drive Strength Optimization</h4>
+                <ul class="features-list">
+                    <li>Parses library naming convention (e.g., AND2X1_HVT)</li>
+                    <li>Extracts current drive strength</li>
+                    <li>Computes next higher strength version</li>
+                    <li>Constructs target library cell name</li>
+                </ul>
+
+                <h4>3. Cell Upsizing (ECO Fix)</h4>
+                <ul class="features-list">
+                    <li>Replaces driver cell with higher strength version</li>
+                    <li>Improves transition time and load driving capability</li>
+                    <li>Improves timing slack</li>
+                </ul>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/scripts/working_scripts/upsize_driver_cell/upsize_cell.tcl" target="_blank" class="btn">
+                    View Cell Upsizing Script on GitHub
+                </a>
+            </section>
+
+            <section class="section">
+                <h2>2. Automated Buffer Insertion Script</h2>
+                <p>
+                    Developed an <strong>ECO automation script for fixing max capacitance violations</strong> in a multi-voltage ASIC 
+                    design by inserting buffers on critical nets. The flow parses violation reports, identifies problematic nets, and 
+                    strategically inserts buffering cells close to driver pins to reduce load and improve signal integrity.
+                </p>
+
+                <h3>Buffer Insertion Features</h3>
+                <ul class="features-list">
+                    <li>Parses max capacitance violation report automatically</li>
+                    <li>Extracts critical violating net names</li>
+                    <li>Identifies driver output pins for each net</li>
+                    <li>Inserts high-drive buffer cells (NBUFFX8_LVT)</li>
+                    <li>Positions buffers near driver pin location for optimal timing impact</li>
+                    <li>Performs incremental placement legalization after insertion</li>
+                    <li>Handles failures using robust TCL error catching</li>
+                    <li>Provides success/failure statistics for ECO debugging</li>
+                </ul>
+
+                <h3>Buffer Insertion Flow Breakdown</h3>
+                <h4>1. Violation Report Processing</h4>
+                <ul class="features-list">
+                    <li>Reads max_cap_vio.txt</li>
+                    <li>Filters valid violation entries</li>
+                    <li>Extracts net names from report columns</li>
+                </ul>
+
+                <h4>2. Buffer Insertion Strategy</h4>
+                <ul class="features-list">
+                    <li>Inserts buffer cell (NBUFFX8_LVT)</li>
+                    <li>Uses insert_buffer command on driver pin</li>
+                    <li>Reduces capacitive load seen by original driver</li>
+                    <li>Improves signal integrity and transition delay</li>
+                </ul>
+
+                <h4>3. Incremental Legalization</h4>
+                <ul class="features-list">
+                    <li>Runs legalize_placement -incremental</li>
+                    <li>Fixes placement overlaps introduced by buffer insertion</li>
+                    <li>Maintains design legality without full re-place</li>
+                </ul>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Physical Design ECO</li>
+                    <li>Buffer Insertion Strategy</li>
+                    <li>Max Capacitance Fixing</li>
+                    <li>Signal Integrity Optimization</li>
+                    <li>TCL Automation</li>
+                    <li>Incremental Placement</li>
+                    <li>Timing Closure Techniques</li>
+                    <li>ASIC Physical Design Debugging</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Built an <strong>automated ECO buffer insertion flow</strong> that intelligently resolves <strong>max capacitance 
+                    violations by inserting optimized buffer cells near driver pins</strong>, enabling <strong>fast, localized timing 
+                    and SI fixes in late-stage ASIC physical design</strong>.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/scripts/working_scripts/Insert_Buffer/insert_buffer.tcl" target="_blank" class="btn">
+                    View Buffer Insertion Script on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- Setup Fixes Page -->
+        <div id="setup-fixes" class="page">
+            <section class="section">
+                <h2>Setup Fixes - Voltage Area & Floorplan Optimization</h2>
+                <p>
+                    This section covers advanced physical design optimization techniques for multi-voltage ASIC implementation, 
+                    including automated voltage-area generation and floorplan iteration cycles.
+                </p>
+
+                <h3>Voltage Area Creation Script</h3>
+                <p>
+                    Developed a <strong>dynamic voltage-area creation script</strong> for a multi-voltage cryptographic SoC, 
+                    focusing on automatic calculation and generation of <strong>low-power domain (PD_LP) placement regions</strong> 
+                    based on cell area utilization and physical design constraints.
+                </p>
+
+                <h3>Voltage Area Features</h3>
+                <ul class="features-list">
+                    <li>Automatically calculates total area of low-power key generation block (u_key_gen_lp)</li>
+                    <li>Applies target utilization (80%) for voltage area sizing</li>
+                    <li>Dynamically computes height and width based on standard cell grid alignment</li>
+                    <li>Rounds dimensions to technology-compliant placement grid</li>
+                    <li>Generates voltage-area coordinates with guard-band isolation</li>
+                    <li>Defines physical region for PD_LP power domain</li>
+                    <li>Removes previous voltage regions before regeneration for consistency</li>
+                </ul>
+
+                <h3>Voltage Area Flow Breakdown</h3>
+                <h4>1. Area Extraction & Calculation</h4>
+                <ul class="features-list">
+                    <li>Extracts area of all cells in low-power block</li>
+                    <li>Accumulates total design area dynamically</li>
+                    <li>Computes effective voltage-area requirement using utilization factor (0.8)</li>
+                </ul>
+
+                <h4>2. Voltage Area Sizing</h4>
+                <ul class="features-list">
+                    <li>Converts logical area → physical region size</li>
+                    <li>Calculates height (grid-aligned rounding)</li>
+                    <li>Calculates width (derived from area/height ratio)</li>
+                    <li>Ensures compatibility with placement site grid</li>
+                </ul>
+
+                <h4>3. Grid-Aware Physical Adjustment</h4>
+                <ul class="features-list">
+                    <li>Rounds dimensions to height grid: 1.672</li>
+                    <li>Rounds dimensions to width grid: 0.152</li>
+                    <li>Prevents placement and legalization violations</li>
+                </ul>
+
+                <h4>4. Region Definition & Guard Bands</h4>
+                <ul class="features-list">
+                    <li>Defines origin point (llx, lly)</li>
+                    <li>Computes opposite corner (urx, ury)</li>
+                    <li>Creates bounding box for voltage area</li>
+                    <li>Applies guard band spacing (5.016 units) to isolate domain</li>
+                </ul>
+
+                <h3>Skills Demonstrated (Voltage Area)</h3>
+                <ul class="features-list">
+                    <li>Voltage-Aware Floorplanning</li>
+                    <li>Physical Design Automation</li>
+                    <li>Area Estimation</li>
+                    <li>Multi-Voltage Partitioning</li>
+                    <li>TCL Scripting for PD</li>
+                    <li>Grid-Constrained Layout Design</li>
+                    <li>Power Domain Isolation</li>
+                    <li>ASIC Physical Design Methodology</li>
+                </ul>
+
+                <h3>Key Achievement (Voltage Area)</h3>
+                <p>
+                    Built an <strong>automated voltage-area generation methodology</strong> that dynamically sizes and places a 
+                    <strong>low-power domain region based on real cell area and utilization constraints</strong>, ensuring 
+                    <strong>accurate, grid-aligned, and isolation-safe multi-voltage floorplanning for ASIC implementation</strong>.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Floorplan Iteration & Congestion Fix</h2>
+                <p>
+                    This section shows a real physical design floorplan optimization cycle, where an initial high-utilization 
+                    "Y-shaped" floorplan caused severe routing congestion, and then was corrected by resizing and rebalancing the core area.
+                </p>
+
+                <h3>Initial Floorplan Problem</h3>
+                <p>The first floorplan used a Y-shaped boundary, which created uneven routing resources and congestion hotspots.</p>
+
+                <h3>Problem Analysis</h3>
+                <ul class="features-list">
+                    <li>Core utilization: ~84.75% (too high for routing)</li>
+                    <li>Severe routing congestion: ~70%</li>
+                    <li>Total overflow: 377,057</li>
+                    <li>High congestion GRCs: 69.13%</li>
+                    <li>Horizontal routing overflow: 81.91% (critical bottleneck)</li>
+                    <li>Vertical routing overflow: 56.36%</li>
+                </ul>
+
+                <h3>Root Cause Analysis</h3>
+                <ul class="features-list">
+                    <li>High utilization left insufficient routing whitespace</li>
+                    <li>Irregular "Y-shape" created uneven routing channels</li>
+                    <li>Horizontal congestion was especially severe</li>
+                    <li>Placement had no room for detours or detangling nets</li>
+                </ul>
+
+                <h3>Fix Strategy</h3>
+                <p>The floorplan was re-initialized with improved geometry and reduced density.</p>
+
+                <h3>Key Changes</h3>
+                <ul class="features-list">
+                    <li>Expanded and reshaped boundary for better routing flow</li>
+                    <li>Reduced core utilization from ~84.75% to ~76.71%</li>
+                    <li>Improved routing channel distribution</li>
+                    <li>Preserved Y-shape structure but made it more routing-friendly</li>
+                </ul>
+
+                <h3>Final Outcome</h3>
+                <ul class="features-list">
+                    <li>Core utilization reduced to 76.71% (safe range)</li>
+                    <li>Improved routing feasibility</li>
+                    <li>Significantly lower congestion risk</li>
+                </ul>
+
+                <h3>Engineering Insight</h3>
+                <p style="background: rgba(233, 69, 96, 0.15); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--highlight-color);">
+                    <strong>High utilization + irregular floorplan shapes = routing congestion explosion</strong><br><br>
+                    Even if placement fits, routing will fail without proper whitespace planning.
+                </p>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Floorplanning Optimization</li>
+                    <li>Congestion Analysis</li>
+                    <li>Utilization Tuning</li>
+                    <li>Routing Channel Design</li>
+                    <li>Physical Design Debugging</li>
+                    <li>ICC2/Innovus Flow</li>
+                    <li>Iterative Floorplan Refinement</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Identified and fixed a <strong>severe floorplan-induced routing congestion issue</strong> by iteratively refining 
+                    a <strong>Y-shaped floorplan</strong>, reducing utilization and improving routing resources, resulting in a 
+                    <strong>clean, routable, and physically balanced chip layout</strong>.
+                </p>
+            </section>
+        </div>
+
+        <!-- SHAPES PAGES -->
+        <!-- A Shape Page -->
+        <div id="shape-a" class="page">
+            <section class="section">
+                <h2>Floorplan Initialization – A Shape</h2>
+                <p>
+                    This step initializes the <strong>chip floorplan</strong> for the multi-voltage cryptographic SoC by defining 
+                    the <strong>core area, boundary shape, site rows, and routing tracks</strong>. It forms the foundation for all 
+                    later physical design stages like placement, power planning, CTS, and routing.
+                </p>
+
+                <h3>Core Concept</h3>
+                <p>
+                    The command defines a <strong>custom, non-rectangular floorplan boundary</strong>, which allows flexible chip 
+                    shaping instead of a simple rectangular die. This is useful for realistic ASIC designs where IOs, macros, or 
+                    power regions may require irregular boundaries.
+                </p>
+
+                <h3>What This Flow Does</h3>
+                <h4>1. Clears Existing Floorplan</h4>
+                <ul class="features-list">
+                    <li>Removes any previously created floorplan objects</li>
+                    <li>Ensures a clean restart of physical design setup</li>
+                </ul>
+
+                <h4>2. Defines Chip Boundary</h4>
+                <p>
+                    The boundary is defined as a polygon with coordinates that create a custom stepped floorplan shape, 
+                    instead of a simple rectangle.
+                </p>
+
+                <h4>3. Core Creation</h4>
+                <ul class="features-list">
+                    <li>Core region is generated inside the boundary</li>
+                    <li>Core utilization = ~80.32%</li>
+                    <li>Ensures balance between area efficiency and routing congestion margin</li>
+                </ul>
+
+                <h4>4. Site Array Generation</h4>
+                <ul class="features-list">
+                    <li>Standard-cell rows (site rows) are created</li>
+                    <li>Cells will be placed aligned to these rows</li>
+                    <li>Floorplan snaps to manufacturing-compatible grid</li>
+                </ul>
+
+                <h4>5. Routing Track Setup</h4>
+                <ul class="features-list">
+                    <li>Routing tracks are automatically generated</li>
+                    <li>Enables uniform routing resources across the chip</li>
+                    <li>Prepares design for congestion-aware placement and routing</li>
+                </ul>
+
+                <h4>6. Core Alignment Fix</h4>
+                <ul class="features-list">
+                    <li>Core boundary snaps to site grid</li>
+                    <li>Ensures legality for standard cell placement</li>
+                    <li>Prevents placement misalignment issues later</li>
+                </ul>
+
+                <h3>Why This Step Matters</h3>
+                <p>
+                    This is the <strong>base physical structure of the chip</strong>, and it directly impacts:
+                </p>
+                <ul class="features-list">
+                    <li>Placement quality</li>
+                    <li>Congestion behavior</li>
+                    <li>Timing closure</li>
+                    <li>Power grid quality</li>
+                    <li>Routing efficiency</li>
+                </ul>
+
+                <p style="margin-top: 1rem; font-style: italic;">
+                    A poorly defined floorplan here can break the entire backend flow.
+                </p>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Physical Design Floorplanning</li>
+                    <li>Core/Die Definition</li>
+                    <li>Site Row Generation</li>
+                    <li>Routing Track Setup</li>
+                    <li>ASIC Layout Planning</li>
+                    <li>Utilization Planning</li>
+                    <li>PnR Initialization Flow</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Defined a <strong>custom polygon-based floorplan with controlled utilization and proper site alignment</strong>, 
+                    forming a <strong>silicon-ready physical foundation for a multi-voltage cryptographic SoC</strong>.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/docs/A_shape_cryptop_docs.txt" target="_blank" class="btn">
+                    View A Shape Documentation on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- Y Shape Page -->
+        <div id="shape-y" class="page">
+            <section class="section">
+                <h2>Floorplan Iteration – Y-Shape Congestion Fix</h2>
+                <p>
+                    This section shows a <strong>real physical design floorplan optimization cycle</strong>, where an initial 
+                    high-utilization "Y-shaped" floorplan caused severe routing congestion, and then was corrected by resizing 
+                    and rebalancing the core area.
+                </p>
+
+                <h3>Initial Floorplan (Problem Case)</h3>
+                <p>
+                    The first floorplan used a <strong>Y-shaped boundary</strong>, which created uneven routing resources 
+                    and congestion hotspots.
+                </p>
+
+                <h3>Key Observations (Problem Phase)</h3>
+                <ul class="features-list">
+                    <li>Core utilization: ~84.75% (too high for routing)</li>
+                    <li>Severe routing congestion: ~70%</li>
+                </ul>
+
+                <h3>Congestion Report Summary (Before Fix)</h3>
+                <ul class="features-list">
+                    <li>Total overflow: 377,057</li>
+                    <li>High congestion GRCs: 69.13%</li>
+                    <li>Horizontal routing overflow: 81.91% (critical bottleneck)</li>
+                    <li>Vertical routing overflow: 56.36%</li>
+                </ul>
+
+                <h3>Problem Root Cause</h3>
+                <ul class="features-list">
+                    <li>High utilization left insufficient routing whitespace</li>
+                    <li>Irregular "Y-shape" created uneven routing channels</li>
+                    <li>Horizontal congestion was especially severe</li>
+                    <li>Placement had no room for detours or detangling nets</li>
+                </ul>
+
+                <h3>Fix Strategy (Floorplan Rework)</h3>
+                <p>
+                    The floorplan was <strong>re-initialized with improved geometry and reduced density</strong>.
+                </p>
+
+                <h3>Key Changes</h3>
+                <ul class="features-list">
+                    <li>Expanded and reshaped boundary for better routing flow</li>
+                    <li>Reduced core utilization from ~84.75% → ~76.71%</li>
+                    <li>Improved routing channel distribution</li>
+                    <li>Preserved Y-shape structure but made it more routing-friendly</li>
+                </ul>
+
+                <h3>Updated Floorplan (After Fix)</h3>
+
+                <h3>Improvements (After Fix)</h3>
+                <ul class="features-list">
+                    <li>More balanced area distribution</li>
+                    <li>Increased whitespace for routing escape paths</li>
+                    <li>Reduced congestion pressure significantly</li>
+                    <li>Better alignment with site rows and routing tracks</li>
+                </ul>
+
+                <h3>Final Outcome</h3>
+                <ul class="features-list">
+                    <li>Core utilization reduced → 76.71% (safe range)</li>
+                    <li>Improved routing feasibility</li>
+                    <li>Significantly lower congestion risk</li>
+                </ul>
+
+                <h3>Engineering Insight</h3>
+                <p style="background: rgba(233, 69, 96, 0.15); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--highlight-color); margin-top: 1.5rem;">
+                    <strong>High utilization + irregular floorplan shapes = routing congestion explosion</strong><br><br>
+                    Even if placement fits, routing will fail without proper whitespace planning.
+                </p>
+
+                <h3>Skills Demonstrated</h3>
+                <ul class="features-list">
+                    <li>Floorplanning Optimization</li>
+                    <li>Congestion Analysis</li>
+                    <li>Utilization Tuning</li>
+                    <li>Routing Channel Design</li>
+                    <li>Physical Design Debugging</li>
+                    <li>ICC2/Innovus Flow</li>
+                    <li>Iterative Floorplan Refinement</li>
+                </ul>
+
+                <h3>Key Achievement</h3>
+                <p>
+                    Identified and fixed a <strong>severe floorplan-induced routing congestion issue</strong> by iteratively 
+                    refining a <strong>Y-shaped floorplan</strong>, reducing utilization and improving routing resources, 
+                    resulting in a <strong>clean, routable, and physically balanced chip layout</strong>.
+                </p>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top_Project/docs/Y_shape_cryptop_docs.txt" target="_blank" class="btn">
+                    View Y Shape Documentation on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- MCMM Page -->
+        <div id="mcmm" class="page">
+            <section class="section">
+                <h2>MCMM Constraints - Multi-Corner Multi-Mode</h2>
+                <p>
+                    MCMM (Multi-Corner Multi-Mode) timing analysis is critical for ensuring robust physical design closure 
+                    across multiple operating conditions. This section provides comprehensive details on the MCMM setup and 
+                    constraint methodology used in the crypto_top project.
+                </p>
+
+                <h3>MCMM Overview</h3>
+                <p>
+                    Multi-Corner Multi-Mode analysis ensures that the design meets timing requirements across:
+                </p>
+                <ul class="features-list">
+                    <li><strong>Process Corners:</strong> FF (Fast-Fast) and SS (Slow-Slow)</li>
+                    <li><strong>Temperature Conditions:</strong> -40°C and 125°C</li>
+                    <li><strong>Operating Modes:</strong> Functional and Scan/Test</li>
+                    <li><strong>Voltage Domains:</strong> 0.95V and 0.75V</li>
+                </ul>
+
+                <h3>Corner Specifications</h3>
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Corner</th>
+                            <th>Process</th>
+                            <th>Temperature</th>
+                            <th>Library</th>
+                            <th>Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FF (-40°C)</td>
+                            <td>Fast-Fast</td>
+                            <td>-40°C</td>
+                            <td>saed32rvt_ss0p95v_m40c.db</td>
+                            <td>Best-case hold analysis</td>
+                        </tr>
+                        <tr>
+                            <td>SS (125°C)</td>
+                            <td>Slow-Slow</td>
+                            <td>125°C</td>
+                            <td>saed32rvt_ss0p95v125c.db</td>
+                            <td>Worst-case setup analysis</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Operating Modes</h3>
+                <h4>Functional Mode</h4>
+                <ul class="features-list">
+                    <li>Normal operational mode</li>
+                    <li>Encryption/decryption operations</li>
+                    <li>Core cryptographic functions active</li>
+                </ul>
+
+                <h4>Scan/Test Mode</h4>
+                <ul class="features-list">
+                    <li>Test/Debug operational mode</li>
+                    <li>Scan chain enabled</li>
+                    <li>Different timing characteristics due to scan path</li>
+                </ul>
+
+                <h3>MCMM Analysis Benefits</h3>
+                <ul class="features-list">
+                    <li>Comprehensive timing coverage across all operating conditions</li>
+                    <li>Detects timing failures that single-corner analysis might miss</li>
+                    <li>Ensures hold time compliance in best-case conditions</li>
+                    <li>Ensures setup time compliance in worst-case conditions</li>
+                    <li>Enables efficient multi-voltage timing closure</li>
+                    <li>Reduces silicon failure risk and improves reliability</li>
+                </ul>
+
+                <h3>Constraint Management in Physical Design</h3>
+                <p>
+                    During physical design stages (placement, CTS, routing), MCMM constraints guide:
+                </p>
+                <ul class="features-list">
+                    <li><strong>Placement Optimization:</strong> Cell placement to minimize critical path delays</li>
+                    <li><strong>Clock Tree Synthesis:</strong> Clock skew control across all corners</li>
+                    <li><strong>Routing:</strong> Wire routing prioritizing critical timing paths</li>
+                    <li><strong>Signoff Analysis:</strong> Final timing verification across all scenarios</li>
+                </ul>
+
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/tree/main/Cryto_top_Project/Constraints/MCMM_PD_violations" target="_blank" class="btn">
+                    View MCMM Constraints on GitHub
+                </a>
+            </section>
+        </div>
+
+        <!-- MANUAL PAGE -->
+        <div id="manual" class="page">
+            <section class="section">
+                <h2>Manual & Documentation</h2>
+                <p>
+                    Comprehensive documentation for the Multi-Voltage Crypto Core project is available in multiple formats 
+                    to support different learning and reference preferences.
+                </p>
+
+                <h3>Available Resources</h3>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h4>PDF Manual</h4>
+                        <p>
+                            Complete printed documentation covering all design aspects, flow descriptions, and reference materials. 
+                            Suitable for offline reference and detailed study.
+                        </p>
+                        <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files/blob/main/Cryto_top%20Manual.pdf" target="_blank" class="btn">
+                            Download PDF Manual
+                        </a>
+                    </div>
+                    <div class="content-card">
+                        <h4>Website Manual</h4>
+                        <p>
+                            Interactive web-based documentation with hyperlinks, search capability, and responsive design. 
+                            Provides detailed walkthroughs and tutorials.
+                        </p>
+                        <a href="https://ajay-mallesh.github.io/crypro_top_manual_website/#appA" target="_blank" class="btn">
+                            View Website Manual
+                        </a>
+                    </div>
+                </div>
+
+                <h3>Manual Contents</h3>
+                <p>Both manual formats include:</p>
+                <ul class="features-list">
+                    <li>Project overview and objectives</li>
+                    <li>Multi-voltage architecture explanation</li>
+                    <li>RTL design details and code walkthroughs</li>
+                    <li>UPF power intent specification guide</li>
+                    <li>Timing constraint development (SDC and MCMM)</li>
+                    <li>Synthesis flow and DFT insertion techniques</li>
+                    <li>Physical design implementation (floorplanning, placement, CTS, routing)</li>
+                    <li>Power planning and PDN design methodology</li>
+                    <li>Signoff and timing closure strategies</li>
+                    <li>ECO (Engineering Change Order) techniques</li>
+                    <li>Troubleshooting and optimization tips</li>
+                    <li>Tool command references and examples</li>
+                </ul>
+
+                <h3>Documentation Navigation Tips</h3>
+                <ul class="features-list">
+                    <li><strong>For First-Time Users:</strong> Start with the project overview and architecture sections</li>
+                    <li><strong>For RTL Engineers:</strong> Focus on RTL design and UPF specification sections</li>
+                    <li><strong>For Physical Design Engineers:</strong> Reference floorplanning through signoff sections</li>
+                    <li><strong>For Flow Automation:</strong> Review TCL script sections and tool command references</li>
+                    <li><strong>For Troubleshooting:</strong> Consult the physical design debugging and ECO sections</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- EXTRA FILES PAGE -->
+        <div id="xtra-files" class="page">
+            <section class="section">
+                <h2>Extra Files & Resources</h2>
+                <p>
+                    Additional documentation, templates, and reference materials for the Multi-Voltage Crypto Core project.
+                </p>
+
+                <h3>Coming Soon</h3>
+                <p>
+                    Additional resources are being prepared and will be made available soon. This section will include:
+                </p>
+                <ul class="features-list">
+                    <li>Technology reference files and LEF/DEF templates</li>
+                    <li>Tool configuration files and setup scripts</li>
+                    <li>Design checklist and verification templates</li>
+                    <li>Performance benchmarking data and reports</li>
+                    <li>FAQs and troubleshooting guides</li>
+                    <li>Additional case studies and examples</li>
+                    <li>Video tutorials and workflow demonstrations</li>
+                </ul>
+
+                <h3>Project Repository</h3>
+                <p>
+                    For the complete and latest resources, visit the official GitHub repository:
+                </p>
+                <a href="https://github.com/Ajay-Mallesh/crypro_top_Project_Files" target="_blank" class="btn">
+                    Visit GitHub Repository
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===================================================================
+         FOOTER
+         =================================================================== -->
+    <footer>
+        <div class="footer-content">
+            <!-- Left Section -->
+            <div class="footer-section">
+                <h4>Crypto_Top Website</h4>
+                <p>Designed by AjayMallesh ©️</p>
+                <p>Crypto_Top Website | Ver 2.0.0 | 24/05/2026</p>
+            </div>
+
+            <!-- Center Section -->
+            <div class="footer-section">
+                <div class="kannada-text">
+                    <p>ವಿನ್ಯಾಸ : ಅಜಯ್ ಮಲ್ಲೇಶ್ ©️</p>
+                    <p>ಸಿರಿಗನ್ನಡಂ ಗೆಲ್ಗೆ ಸಿರಿಗನ್ನಡಂ ಬಾಳ್ಗೆ ❤️💛</p>
+                    <p>ಕರ್ನಾಟಕ ❤️💛 | Karnataka ❤️</p>
+                    <p>India | ಭಾರತ ❤️</p>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>
+                    <a href="mailto:ajaynew96326@gmail.com">📧 ajaynew96326@gmail.com</a>
+                </p>
+                <p>
+                    <a href="https://www.linkedin.com/in/ajaymallesh" target="_blank">💼 www.linkedin.com/in/ajaymallesh</a>
+                </p>
+                <p>
+                    <a href="https://github.com/Ajay-Mallesh" target="_blank">🐙 github.com/Ajay-Mallesh</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <button class="back-to-top" id="backToTop" title="Back to Top">↑</button>
+            <p>© 2026 Ajay Mallesh | Multi-Voltage Crypto Core Project | All Rights Reserved</p>
+            <p>This project is open-source and released for educational and non-commercial community use.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
