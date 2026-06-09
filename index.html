@@ -1742,12 +1742,45 @@
                         <img src="images/github.png" alt="GitHub" class="contact-icon">
                     </a>
                 </div>
+                
 <!-- Safe, lightweight counter that works perfectly offline & online -->
-            <div class="counter-contact-zone">
-                <span class="counter-pulse-dot"></span>
-                <span class="counter-text">Realtime Visitors:</span>
-                <img src="https://counter.moe/get/@ajay-cryptotop?theme=gelbooru" alt="Visitors">
-            </div>
+                <div class="counter-contact-zone">
+                    <span class="counter-pulse-dot"></span>
+                    <span class="counter-text">Realtime Visitors:</span>
+                    <span id="visitor-digits" class="counter-digits">000001</span>
+                </div>
+
+                <script>
+                    async function updateGlobalCounter() {
+                        // 1. CHANGE THIS STRING TO SOMETHING NEW RIGHT NOW (e.g., 'ajay_cryptotop_launch_2026')
+                        // This instantly forces a fresh start at 000001 on the live cloud database!
+                        const namespace = 'ajay_cryptotop_launch_final';
+                        const fallbackValue = 1; 
+                        
+                        try {
+                            // Hit the accurate global replacement database endpoint
+                            const response = await fetch(`https://countapi.mileshilliard.com/api/v1/hit/${namespace}`);
+                            const data = await response.json();
+                            
+                            // The mileshilliard API returns the number directly inside 'data.value'
+                            if(data && typeof data.value !== 'undefined') {
+                                document.getElementById('visitor-digits').innerText = String(data.value).padStart(6, '0');
+                                // Sync the local backup so it matches the cloud exactly
+                                localStorage.setItem('crypto_site_counter', data.value);
+                            } else {
+                                throw new Error();
+                            }
+                        } catch (error) {
+                            // Safe local backup logic if offline
+                            let count = parseInt(localStorage.getItem('crypto_site_counter')) || fallbackValue;
+                            count++;
+                            localStorage.setItem('crypto_site_counter', count);
+                            document.getElementById('visitor-digits').innerText = String(count).padStart(6, '0');
+                        }
+                    }
+
+                    updateGlobalCounter();
+                </script>
             </div>
         </div>
 
