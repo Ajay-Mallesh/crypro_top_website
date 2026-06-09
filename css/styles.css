@@ -963,7 +963,7 @@ footer {
   gap: 0.75rem;
   margin-top: 1.5rem !important;
   
-  /* Creates a contrasting deep dark backdrop badge */
+  /* Deep dark backdrop badge matching your site palette */
   background: #0f111a !important; 
   padding: 0.6rem 1.4rem !important;
   
@@ -995,10 +995,9 @@ footer {
 
 .counter-contact-zone img {
   display: inline-block !important;
-  height: 22px !important; /* Scales digits up slightly larger */
+  height: 20px !important; /* Forces normal text proportions */
   width: auto !important;
   vertical-align: middle !important;
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
 }
 
 /* Sharp flashing status pulse */
@@ -1027,4 +1026,18 @@ footer {
 @keyframes counterPing {
   0% { transform: scale(1); opacity: 1; }
   100% { transform: scale(3); opacity: 0; }
+}
+
+
+/* Add this right at the very bottom of your stylesheet */
+.counter-digits {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important; /* Clean, highly visible white digits */
+  background: rgba(233, 69, 96, 0.15); /* Soft crimson highlight background */
+  padding: 0.2rem 0.6rem !important;
+  border-radius: 4px !important;
+  font-family: monospace !important; /* Uniform text alignment like a real counter dashboard */
+  letter-spacing: 1px !important;
+  border: 1px solid rgba(233, 69, 96, 0.3);
 }

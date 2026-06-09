@@ -238,18 +238,26 @@ For questions, issues, or contributions:
 
 ## Changelog
 
+## Changelog
+
 ### [1.3.0] - 09/06/2026
+
 #### Added
-- Integrated a live database-backed serverless visitor counter component using `counter.moe`.
+- Integrated a live database-backed global visitor counter component driven by CountAPI cloud infrastructure.
+- Added a fail-safe client-side fallback mechanism using `localStorage` to ensure the layout remains functional even when browsing offline.
 - Implemented **MCMM Constraints** (Multi-Corner Multi-Mode) structural links to the primary navigation logic.
 
 #### Changed
+- Shifted away from unstable, external image-rendering widgets to a clean, lightweight HTML plain-text layout (`.counter-digits`) for maximum stability and asset load performance.
+- Configured custom padding logic (`String().padStart(6, '0')`) to preserve a classic, uniform 6-digit layout dashboard profile (`000001`) without relying on blurry pixel-art image files.
 - Repositioned the live visitor counter to sit directly underneath the social icons inside the **CONTACT** grid column block to prevent footer text layout crowding.
-- Restructured counter design from a circular capsule to a crisp, glowing square badge profile (`border-radius: 8px`) matching the native dimensions of the contact brand icons.
+- Restructured counter container design from a circular capsule to a crisp, glowing square badge profile (`border-radius: 8px`) matching the native dimensions of the contact brand icons.
 - Enhanced layout visibility using high-contrast variables: deep-dark container background (`#0f111a`), neon-pink accent outline (`#e94560`), and a sharp glowing green flashing status pulse indicator.
 
 #### Fixed
+- Fixed critical `ERR_NAME_NOT_RESOLVED` layout-breaking exceptions caused by the completely offline `counter.moe` DNS endpoint.
 - Fixed a rendering issue where dynamic third-party script-injected banner widgets threw document exceptions and crashed footer paragraph flex layout constraints during local environment testing (`file:///`).
+- Resolved a cache-persistence bug during development by switching to a brand new database namespace string, forcing a pristine and authentic start from `000001` upon production launch.
 - Suppressed script-generated promotional tracking URLs using strict structural CSS overrides (`display: none !important`).
 
 **Last Updated**: 09/06/2026  
