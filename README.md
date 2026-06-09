@@ -204,7 +204,7 @@ Edit navbar items in `index.html`:
 
 **Author**: Ajay Mallesh  
 **Reviewer**: Gemini Pro 3.1 & Ajay Mallesh  
-**Version**: 1.2.0  
+**Version**: 1.3.0  
 **Date**: 09/06/2026
 
 **Email**: ajaymalavalli912@gmail.com  
@@ -236,5 +236,21 @@ For questions, issues, or contributions:
 
 ---
 
+## Changelog
+
+### [1.3.0] - 09/06/2026
+#### Added
+- Integrated a live database-backed serverless visitor counter component using `counter.moe`.
+- Implemented **MCMM Constraints** (Multi-Corner Multi-Mode) structural links to the primary navigation logic.
+
+#### Changed
+- Repositioned the live visitor counter to sit directly underneath the social icons inside the **CONTACT** grid column block to prevent footer text layout crowding.
+- Restructured counter design from a circular capsule to a crisp, glowing square badge profile (`border-radius: 8px`) matching the native dimensions of the contact brand icons.
+- Enhanced layout visibility using high-contrast variables: deep-dark container background (`#0f111a`), neon-pink accent outline (`#e94560`), and a sharp glowing green flashing status pulse indicator.
+
+#### Fixed
+- Fixed a rendering issue where dynamic third-party script-injected banner widgets threw document exceptions and crashed footer paragraph flex layout constraints during local environment testing (`file:///`).
+- Suppressed script-generated promotional tracking URLs using strict structural CSS overrides (`display: none !important`).
+
 **Last Updated**: 09/06/2026  
-**Website Version**: 1.2.0
+**Website Version**: 1.3.0
