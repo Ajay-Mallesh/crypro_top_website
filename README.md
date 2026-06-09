@@ -204,8 +204,8 @@ Edit navbar items in `index.html`:
 
 **Author**: Ajay Mallesh  
 **Reviewer**: Gemini Pro 3.1 & Ajay Mallesh  
-**Version**: 2.0 (2026)  
-**Date**: 23/05/2026
+**Version**: 1.2.0  
+**Date**: 09/06/2026
 
 **Email**: ajaymalavalli912@gmail.com  
 **LinkedIn**: www.linkedin.com/in/ajaymallesh  
@@ -236,5 +236,5 @@ For questions, issues, or contributions:
 
 ---
 
-**Last Updated**: 03/06/2026  
-**Website Version**: 1.1.1
+**Last Updated**: 09/06/2026  
+**Website Version**: 1.2.0
