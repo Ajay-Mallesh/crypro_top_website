@@ -72,6 +72,21 @@ body {
   align-items: center;
   padding: 0 2rem;
   white-space: nowrap;
+  gap: 0.8rem;
+}
+
+.logo-img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(233, 69, 96, 0.3);
+  transition: all 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  box-shadow: 0 4px 16px rgba(233, 69, 96, 0.6);
+  transform: scale(1.1);
 }
 
 .logo:hover {
@@ -397,6 +412,7 @@ main {
   padding: 2rem;
   border-radius: 10px;
   border: 1px solid var(--border-color);
+  border-left: 4px solid var(--highlight-color);
   transition: all 0.3s ease;
 }
 
@@ -491,6 +507,29 @@ main {
   background: transparent;
   color: var(--highlight-color);
   transform: translateX(5px);
+}
+
+.github-btn {
+  display: inline-block;
+  padding: 1.2rem 2.5rem;
+  background: var(--highlight-color);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 12px;
+  border: 2px solid var(--highlight-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+}
+
+.github-btn:hover {
+  background: var(--text-primary);
+  color: var(--highlight-color);
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(233, 69, 96, 0.6);
 }
 
 .btn-secondary {
