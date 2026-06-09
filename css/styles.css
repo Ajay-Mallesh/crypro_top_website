@@ -951,3 +951,80 @@ footer {
 #mcmm {
   display: none !important;
 }
+
+
+/* ===================================================================
+   HIGH-VISIBILITY SQUARE GLOWING CONTACT COUNTER
+   =================================================================== */
+.counter-contact-zone {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem;
+  margin-top: 1.5rem !important;
+  
+  /* Creates a contrasting deep dark backdrop badge */
+  background: #0f111a !important; 
+  padding: 0.6rem 1.4rem !important;
+  
+  /* Matches the square corner profile of your contact icons */
+  border-radius: 8px !important; 
+  
+  /* Vivid neon border matching your pink/coral headers */
+  border: 2px solid #e94560 !important; 
+  
+  /* Outer glow effect */
+  box-shadow: 0 0 15px rgba(233, 69, 96, 0.45), inset 0 0 8px rgba(233, 69, 96, 0.2) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Intensifies the neon energy aura on mouse hover */
+.counter-contact-zone:hover {
+  background: #161a29 !important;
+  box-shadow: 0 0 25px rgba(233, 69, 96, 0.75), inset 0 0 12px rgba(233, 69, 96, 0.3) !important;
+  transform: translateY(-1px);
+}
+
+.counter-text {
+  font-size: 0.9rem !important;
+  font-weight: 700 !important; /* Makes label bold and clear */
+  color: #ffffff !important;   /* Crispy clean white */
+  letter-spacing: 0.8px !important;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.counter-contact-zone img {
+  display: inline-block !important;
+  height: 22px !important; /* Scales digits up slightly larger */
+  width: auto !important;
+  vertical-align: middle !important;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+}
+
+/* Sharp flashing status pulse */
+.counter-pulse-dot {
+  width: 9px;
+  height: 9px;
+  background-color: #00ff66 !important; /* Bright radioactive green */
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  box-shadow: 0 0 8px #00ff66;
+}
+
+.counter-pulse-dot::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #00ff66;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: counterPing 1.5s infinite ease-in-out;
+}
+
+@keyframes counterPing {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
