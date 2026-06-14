@@ -282,5 +282,26 @@ For questions, issues, or contributions:
 - Resolved a duplicate border overlapping artifact by isolating the sharp single accent border to the logo graphic itself while vaporizing inherited canvas outlines on the parent logo container wrapper.
 - Implemented a smart `@media` layout fallback mechanism for tablet and small-screen mobile viewports to prevent narrow layout text clipping on compact, portrait displays.
 
+### [1.5.0] - 14/06/2026
+
+#### Added
+
+* Implemented an isolated 3-row CSS Grid layout engine on the emblem links (`.emblem-footer-link`) to cleanly separate text content from structural image containers.
+* Introduced ambient wireframe tracking visibility to the HUD bounding target vector corners (`.hud-corner`), giving them an initial silver outline (`rgba(203, 213, 225, 0.5)`) prior to cursor hover interactions.
+* Added a permanent crimson drop-shadow glow effect (`text-shadow: 0 0 10px rgba(233, 69, 96, 0.5)`) to the interactive footer captions during active mouse hover states.
+
+#### Changed
+
+* Upgraded the baseline color of the regional Kannada text script strings (`.emblem-footer-text`) from low-contrast dim gray (`#5f6685`) to full-spectrum crisp white (`#ffffff`) to ensure thin font strokes are completely visible against the dark console backdrop.
+* Expanded the physical display canvas dimensions of the tactical emblem graphics (`.emblem-footer-img`) from a restricted `90px × 60px` ratio to an authoritative `110px × 75px` hardware presentation frame.
+* Scaled up the upper metadata tag attributes (`::before`) from a cramped `0.6rem` scale to a matching `0.85rem` monospaced layout format while updating its base state color to a high-contrast light silver (`#cbd5e1`).
+* Altered the terminal cursor bracket (`.terminal-prefix`) to display a static, un-hidden crimson color state (`#e94560`) by default to enhance instant data tracking before link selection.
+* Boosted the primary footer container top padding boundaries from `30px` to `60px` (`padding: 60px 40px 30px 40px !important`) to generate deep vertical separation between main workspace projects and the hardware footer block.
+
+#### Fixed
+
+* Patched a critical text wrap collision bug where enlarged English strings (e.g., `"Gandabherunda Emblem"`) would break onto two rows and directly overlap the top edges of the image container.
+* Resolved text crowding constraints by increasing the emblem frame wrapper's bottom margin to `14px` and introducing an explicit `10px` top margin, establishing clean breathing room around the larger typography blocks.
+
 **Last Updated**: 14/06/2026  
-**Website Version**: 1.4.0
+**Website Version**: 1.5.0
