@@ -264,18 +264,22 @@ For questions, issues, or contributions:
 
 #### Added
 - Implemented an immersive, cyberpunk hardware engineering console popup window overlay that triggers on every fresh page initialization and browser reload event.
+- Added a highly visible, lightweight backdrop overlay blur effect (`backdrop-filter: blur(4px)`) featuring a precisely tuned 20% opacity tint mask to ensure the background website remains distinctly visible behind the active modal layout frame.
 - Added a strict single-line text layout with decorative cyber bullet markers (`■`) to anchor primary informational site statements without structural breaks.
-- Created a dynamic CSS monospaced typewriter effect module (`typeLetterByLetter`) providing a continuous running, real-time character simulation string.
+- Created a dynamic, infinite CSS monospaced typewriter effect loop (`typeLetterByLetterContinuous`) that slowly types out terminal text from left to right at an authentic hardware reading pace before cleanly resetting.
 - Integrated hardware-inspired metadata frame elements like the `[ SYS_READY ]` console tracker text flag to establish an authentic ASIC design testing dashboard environment.
 
 #### Changed
 - Redesigned the welcome modal interface from a standard rounded web card to a sharp, zero-radius, matte-finish industrial hardware command block.
-- Updated the logo frame template into a stark, geometric square structure featuring an ambient multi-voltage red linear gradient fill line and an active neon box glow outline.
+- Updated the logo image pointer path from `.jpg` to the matching original `.jpeg` filename to restore instant asset resolution.
+- Expanded structural margin spacing between the primary hardware image frame and the typographical content panel (`margin-bottom: 45px !important`) to eliminate element clipping and force clear vertical breathing room.
+- Re-engineered the typing loading tagline container with an explicit block layout and strict left-side alignment (`margin-left: 0; text-align: left;`) to anchor character growth perfectly from the left margin without dynamic center shifting.
 - Upgraded the text design to a high-contrast dual-tone style, splitting the site title into white and crimson text variations while injecting custom drop-shadow styling highlights (`text-shadow`).
 - Replaced the large bottom textual "Close" button block with a sleek, minimalist floating close command icon (`✕`) in the upper-right dashboard frame corner featuring a smooth hover rotation animation transform.
 
 #### Fixed
 - Fixed an overflow layout issue across diverse desktop configurations by expanding container width allowances up to `680px`, ensuring text rows sit locked strictly on a single layout line.
+- Resolved a duplicate border overlapping artifact by isolating the sharp single accent border to the logo graphic itself while vaporizing inherited canvas outlines on the parent logo container wrapper.
 - Implemented a smart `@media` layout fallback mechanism for tablet and small-screen mobile viewports to prevent narrow layout text clipping on compact, portrait displays.
 
 **Last Updated**: 14/06/2026  
