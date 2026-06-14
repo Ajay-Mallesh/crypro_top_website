@@ -1041,3 +1041,207 @@ footer {
   letter-spacing: 1px !important;
   border: 1px solid rgba(233, 69, 96, 0.3);
 }
+
+
+/* ===================================================================
+   WELCOME LOGO POPUP STYLES (FUTURISTIC HARDWARE CONSOLE)
+   =================================================================== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 9, 15, 0.95); /* Deep dark industrial overlay */
+  backdrop-filter: blur(12px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.popup-overlay.show {
+  display: flex !important;
+  opacity: 1;
+}
+
+/* Upgraded Main Content Grid Box */
+.popup-content-console {
+  background: #0b0d16; /* True dark matte hardware panel */
+  padding: 4rem 3rem 3rem 3rem;
+  border-radius: 0px !important; /* Sharp engineering edges */
+  border: 1px solid rgba(233, 69, 96, 0.4);
+  box-shadow: 
+    0 0 40px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px rgba(233, 69, 96, 0.05);
+  text-align: center;
+  max-width: 680px; /* Enhanced desktop horizontal allowance */
+  width: 92%;
+  position: relative;
+  transform: scale(0.93) translateY(10px);
+  transition: transform 0.45s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.popup-overlay.show .popup-content-console {
+  transform: scale(1) translateY(0);
+}
+
+/* UI Accent Tags */
+.console-corner-tag {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: #5f6685;
+  letter-spacing: 1px;
+}
+
+/* Sleek Drop-Shadow Close Action button */
+.popup-x-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #5f6685;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 4px;
+}
+
+.popup-x-btn:hover {
+  color: var(--highlight-color);
+  transform: rotate(90deg);
+  text-shadow: 0 0 8px var(--highlight-color);
+}
+
+/* Sharp Square Image Frame Container */
+.popup-logo-container {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 2.2rem auto;
+  border-radius: 0px !important;
+  padding: 1px;
+  background: linear-gradient(180deg, var(--highlight-color), transparent);
+  outline: 1px solid rgba(233, 69, 96, 0.2);
+  outline-offset: 4px;
+}
+
+.popup-logo-square {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px !important;
+  object-fit: cover;
+  display: block;
+}
+
+/* Typography Overhauls */
+.popup-title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.popup-title .highlight-text {
+  color: var(--highlight-color);
+  text-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
+}
+
+.popup-subtitle {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2.2rem;
+  opacity: 0.85;
+}
+
+/* Polished Single Line Configuration Block */
+.popup-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.info-bullet {
+  color: var(--highlight-color);
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+.popup-info-text {
+  color: #cbd5e1; /* Smooth text balance color */
+  font-size: 1.05rem;
+  font-weight: 400;
+  white-space: nowrap; /* Locks content strictly onto one single row */
+  letter-spacing: 0.3px;
+}
+
+.popup-author-text {
+  color: #5f6685;
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 2.5rem;
+}
+
+/* Letter-by-Letter Typewriter System Terminal */
+.popup-tagline-wrapper {
+  display: inline-block;
+  overflow: hidden; 
+  white-space: nowrap;
+  margin: 0 auto;
+  border-right: 2px solid var(--highlight-color); 
+}
+
+.popup-tagline {
+  color: var(--highlight-color);
+  font-size: 0.8rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* Activate letter counting animation on overlay view trigger */
+.popup-overlay.show .popup-tagline-wrapper {
+  animation: 
+    typeLetterByLetter 2s steps(46, end) 0.6s 1 normal both,
+    blinkTerminalCursor 0.75s step-end infinite;
+}
+
+/* Animation Timings */
+@keyframes typeLetterByLetter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkTerminalCursor {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--highlight-color); }
+}
+
+/* Responsive Adaptive Optimization for Tablets/Mobiles */
+@media (max-width: 768px) {
+  .popup-content-console {
+    padding: 3.5rem 1.5rem 2.5rem 1.5rem;
+  }
+  .popup-info-text {
+    white-space: normal; /* Safe wrapping fall-back to prevent narrow viewport cropping */
+    font-size: 0.95rem;
+  }
+  .popup-title {
+    font-size: 1.6rem;
+  }
+  .popup-subtitle {
+    font-size: 0.95rem;
+  }
+}

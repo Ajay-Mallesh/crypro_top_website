@@ -8,7 +8,34 @@ document.addEventListener('DOMContentLoaded', function() {
   setupPageRouting();
   setupMobileMenu();
   setupBackToTop();
+  setupWelcomePopup(); // <-- Added to your existing block
 });
+
+// ===================================================================
+// WELCOME POPUP LOGIC (RELOAD TRIGGERED W/ CLOSE ACTION)
+// ===================================================================
+
+function setupWelcomePopup() {
+  const popup = document.getElementById("welcomePopup");
+  const closeBtn = document.getElementById("closePopupBtn");
+
+  if (!popup || !closeBtn) return;
+
+  // Triggers automatically on every page reload setup
+  setTimeout(() => {
+    popup.classList.add("show");
+  }, 600);
+
+  // Handle closing button action ('X' anchor tag/button interaction)
+  closeBtn.addEventListener("click", function() {
+    popup.classList.remove("show");
+    
+    // Completely clear structural layout overlay footprint when transitions end
+    setTimeout(() => {
+      popup.style.setProperty("display", "none", "important");
+    }, 400);
+  });
+}
 
 // ===================================================================
 // NAVIGATION INITIALIZATION
