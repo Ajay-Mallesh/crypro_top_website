@@ -204,8 +204,8 @@ Edit navbar items in `index.html`:
 
 **Author**: Ajay Mallesh  
 **Reviewer**: Gemini Pro 3.1 & Ajay Mallesh  
-**Version**: 1.3.0  
-**Date**: 09/06/2026
+**Version**: 1.4.0  
+**Date**: 14/06/2026
 
 **Email**: ajaymalavalli912@gmail.com  
 **LinkedIn**: www.linkedin.com/in/ajaymallesh  
@@ -236,7 +236,6 @@ For questions, issues, or contributions:
 
 ---
 
-## Changelog
 
 ## Changelog
 
@@ -260,5 +259,24 @@ For questions, issues, or contributions:
 - Resolved a cache-persistence bug during development by switching to a brand new database namespace string, forcing a pristine and authentic start from `000001` upon production launch.
 - Suppressed script-generated promotional tracking URLs using strict structural CSS overrides (`display: none !important`).
 
-**Last Updated**: 09/06/2026  
-**Website Version**: 1.3.0
+
+### [1.4.0] - 14/06/2026
+
+#### Added
+- Implemented an immersive, cyberpunk hardware engineering console popup window overlay that triggers on every fresh page initialization and browser reload event.
+- Added a strict single-line text layout with decorative cyber bullet markers (`■`) to anchor primary informational site statements without structural breaks.
+- Created a dynamic CSS monospaced typewriter effect module (`typeLetterByLetter`) providing a continuous running, real-time character simulation string.
+- Integrated hardware-inspired metadata frame elements like the `[ SYS_READY ]` console tracker text flag to establish an authentic ASIC design testing dashboard environment.
+
+#### Changed
+- Redesigned the welcome modal interface from a standard rounded web card to a sharp, zero-radius, matte-finish industrial hardware command block.
+- Updated the logo frame template into a stark, geometric square structure featuring an ambient multi-voltage red linear gradient fill line and an active neon box glow outline.
+- Upgraded the text design to a high-contrast dual-tone style, splitting the site title into white and crimson text variations while injecting custom drop-shadow styling highlights (`text-shadow`).
+- Replaced the large bottom textual "Close" button block with a sleek, minimalist floating close command icon (`✕`) in the upper-right dashboard frame corner featuring a smooth hover rotation animation transform.
+
+#### Fixed
+- Fixed an overflow layout issue across diverse desktop configurations by expanding container width allowances up to `680px`, ensuring text rows sit locked strictly on a single layout line.
+- Implemented a smart `@media` layout fallback mechanism for tablet and small-screen mobile viewports to prevent narrow layout text clipping on compact, portrait displays.
+
+**Last Updated**: 14/06/2026  
+**Website Version**: 1.4.0
