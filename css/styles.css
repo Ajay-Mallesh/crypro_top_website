@@ -1052,8 +1052,10 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(7, 9, 15, 0.95); /* Deep dark industrial overlay */
-  backdrop-filter: blur(12px);
+  /* 20% opacity dark overlay tint so behind website is highly visible */
+  background: rgba(7, 9, 15, 0.20) !important; 
+  backdrop-filter: blur(4px) !important;         /* Balanced light background blur */
+  -webkit-backdrop-filter: blur(4px) !important; /* Safari compatibility */
   display: none;
   justify-content: center;
   align-items: center;
@@ -1119,34 +1121,39 @@ footer {
   text-shadow: 0 0 8px var(--highlight-color);
 }
 
-/* Sharp Square Image Frame Container */
+/* Container holding the logo image */
 .popup-logo-container {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 2.2rem auto;
-  border-radius: 0px !important;
-  padding: 1px;
-  background: linear-gradient(180deg, var(--highlight-color), transparent);
-  outline: 1px solid rgba(233, 69, 96, 0.2);
-  outline-offset: 4px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  background: none !important;     
+  border: none !important;         
+  box-shadow: none !important;     
+  padding: 0 !important;
+  margin-top: 10px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 45px !important; /* Spacing between logo and title text */
 }
 
+/* The actual logo image style */
 .popup-logo-square {
-  width: 100%;
-  height: 100%;
-  border-radius: 0px !important;
-  object-fit: cover;
-  display: block;
+  width: 190px !important;
+  height: 190px !important;
+  object-fit: cover !important;
+  border-radius: 5px;
+  border: 1px solid var(--highlight-color, #e94560) !important; 
+  display: block !important;
 }
 
-/* Typography Overhauls */
+/* Ensure the title text doesn't ignore layout margins */
 .popup-title {
-  color: #ffffff;
+  margin-top: 0 !important;
   font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 0.3rem;
-  letter-spacing: 1.5px;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .popup-title .highlight-text {
@@ -1180,10 +1187,10 @@ footer {
 }
 
 .popup-info-text {
-  color: #cbd5e1; /* Smooth text balance color */
+  color: #cbd5e1; 
   font-size: 1.05rem;
   font-weight: 400;
-  white-space: nowrap; /* Locks content strictly onto one single row */
+  white-space: nowrap; 
   letter-spacing: 0.3px;
 }
 
@@ -1194,13 +1201,16 @@ footer {
   margin-bottom: 2.5rem;
 }
 
-/* Letter-by-Letter Typewriter System Terminal */
+/* Continuous Letter-by-Letter Typewriter System Terminal Wrapper */
 .popup-tagline-wrapper {
-  display: inline-block;
+  display: block;               /* Changed to block to allow clean alignment control */
   overflow: hidden; 
   white-space: nowrap;
-  margin: 0 auto;
+  margin: 0 auto 0 0 !important; /* Locks anchor strictly to the left edge */
+  text-align: left !important;  /* Prevents inner shifting */
   border-right: 2px solid var(--highlight-color); 
+  width: 0;                     /* Base state before animation overrides it */
+  max-width: max-content;
 }
 
 .popup-tagline {
@@ -1209,19 +1219,30 @@ footer {
   font-family: 'Courier New', Courier, monospace;
   font-weight: 700;
   letter-spacing: 2px;
+  text-align: left !important;
+  margin: 0;
 }
 
-/* Activate letter counting animation on overlay view trigger */
+/* Activates the slow, continuous typewriter loading sequence from the left edge */
 .popup-overlay.show .popup-tagline-wrapper {
   animation: 
-    typeLetterByLetter 2s steps(46, end) 0.6s 1 normal both,
+    typeLetterByLetterContinuous 14s steps(46, end) infinite, 
     blinkTerminalCursor 0.75s step-end infinite;
 }
 
-/* Animation Timings */
-@keyframes typeLetterByLetter {
-  from { width: 0; }
-  to { width: 100%; }
+/* Continuous typewriter animation loop calibrated for a slow, steady crawl */
+@keyframes typeLetterByLetterContinuous {
+  0% { 
+    width: 0; 
+  }
+  /* Takes up 75% of the total 14s loop time to crawl characters out very slowly */
+  75%, 90% { 
+    width: 100%; /* Holds the phrase completely revealed for reading stability */
+  }
+  /* Resets back to empty cleanly at the turn of the cycle loop */
+  98%, 100% { 
+    width: 0; 
+  }
 }
 
 @keyframes blinkTerminalCursor {
@@ -1234,8 +1255,11 @@ footer {
   .popup-content-console {
     padding: 3.5rem 1.5rem 2.5rem 1.5rem;
   }
+  .popup-logo-container {
+    margin-bottom: 30px !important;
+  }
   .popup-info-text {
-    white-space: normal; /* Safe wrapping fall-back to prevent narrow viewport cropping */
+    white-space: normal; 
     font-size: 0.95rem;
   }
   .popup-title {
