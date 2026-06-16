@@ -303,5 +303,19 @@ For questions, issues, or contributions:
 * Patched a critical text wrap collision bug where enlarged English strings (e.g., `"Gandabherunda Emblem"`) would break onto two rows and directly overlap the top edges of the image container.
 * Resolved text crowding constraints by increasing the emblem frame wrapper's bottom margin to `14px` and introducing an explicit `10px` top margin, establishing clean breathing room around the larger typography blocks.
 
-**Last Updated**: 14/06/2026  
-**Website Version**: 1.5.0
+### [1.6.0] - 16/06/2026
+
+#### Added
+* **Horizontal Contributor Registry**: Implemented a dedicated flexbox row wrapper layout engine (`.contributors-grid`) to display multi-engineer peer credits side-by-side in a clean, centralized workspace presentation.
+* **Micro-Interaction Feedback**: Integrated hardware-accelerated asset response animations (`transform: scale(1.15)`) on the link layers during active mouse cursor hover states.
+
+#### Changed
+* **Asset Viewport Re-engineering**: Upgraded the asset tracking bounding box to a precise hardware clipping window (`width: 22px; height: 22px; overflow: hidden;`) to isolate structural components from raw asset elements.
+* **Typography Alignment Balance**: Standardized row item element tracking gaps down to a strict `4px` layout value inside `.contributor-item` blocks for immediate alignment proximity with the text labels.
+
+#### Fixed
+* **Icon Compression Flattening**: Hardened physical rendering dimensions (`min-width`, `max-width`, `min-height`, `max-height`) to completely halt the flexible viewport squeezing and horizontal distortion occurring on the graphics.
+* **Asset Text Overflow Padding**: Resolved a deep horizontal phantom gap layout defect by implementing a negative pixel offset shift tracking margin (`margin-left: -58px`), successfully realigning the visible blue logo square flush against the end of the engineer's name strings.
+
+**Last Updated**: 16/06/2026  
+**Website Version**: 1.6.0
